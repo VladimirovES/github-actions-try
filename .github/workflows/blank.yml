@@ -19,9 +19,13 @@ jobs:
 
     - name: yo3333
       run: echo "bloadsd12312312l"
+
+    - name: "Set deploy envs"
+      run: |
+          echo "BUILD_NAME=aASKDLASDKSA" >> $GITHUB_ENV
         
     - id: step1
-      run: echo "test=hello" >> "$GITHUB_OUTPUT"
+      run: echo "test={{env.BUILD_NAME}}" >> "$GITHUB_OUTPUT"
     - id: step2
       run: echo "test=world" >> "$GITHUB_OUTPUT"
     
